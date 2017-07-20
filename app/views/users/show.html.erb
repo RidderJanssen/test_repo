@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<table>
+	<thead>
+		<tr>
+			<td><b>Id:</b></td>
+			<td><b>Microposts:</b></td>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render partial: 'micropost', locals: { microposts: @user.microposts } %>
+	</tbody>
+</table>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
